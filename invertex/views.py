@@ -6,6 +6,11 @@ def index(request):
     
     return render(request, 'index.html')
 
+    
+def panelAdminConfirmaciones(request):
+    return render(request, 'panelAdminConfirmaciones.html')
+    
+
 
 def register(request):
     adades = range(18,101)
