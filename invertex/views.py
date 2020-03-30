@@ -7,6 +7,9 @@ def index(request):
     return render(request, 'index.html')
 
 
+def register(request):
+    adades = range(18,101)
+    return render(request, 'register.html',{"edades": adades})
 
 
 

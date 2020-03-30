@@ -1,0 +1,140 @@
+{% extends "index.html" %} {% block title %} Register {% endblock %} {% block content %}
+
+
+<div class="container mt-5 pt-5">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+
+                <!-- Default form register -->
+                <form class="text-center" action="#!">
+
+                    <p class="h4 mb-4">Crea tu cuenta en Invertex</p>
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- Nombre -->
+                            <input type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="col">
+                            <!-- Apellido -->
+                            <input type="text" class="form-control" placeholder="Apellido">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="col-8">
+                            <!-- Rut -->
+                            <input type="text" class="form-control" placeholder="Rut">
+                        </div>
+                        <div class="col-4">
+                            <!-- Edad -->
+                            <select class="browser-default custom-select">
+
+                                <option value="" disabled selected>Edad</option>
+                                {% for edad in edades %}
+                                    <option value="{{ edad }}">{{ edad }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- E-mail -->
+                    <input type="email" class="form-control mb-4" placeholder="Correo">
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- Password -->
+                            <input type="password" class="form-control" placeholder="Contraseña">
+                        </div>
+                        <div class="col">
+                            <!-- Password -->
+                            <input type="password" class="form-control" placeholder="Repetir contraseña">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+
+                            <div class="row align-middle">
+                                <div class="col-1 ">
+                                    <a href="#" class="mx-1" style="color: #2e3951 !important;" role="button" data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-question-circle mt-3"></i></a>
+                                </div>
+                                <div class="col-10">
+                                    <button type="button" class="btn btn-primary btn-sm mdb-color darken-2">Descargar documento
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                <label class="custom-file-label text-left" for="customFileLang">Subir</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Documento</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {% load static %}
+                                    <img src="{% static '/documento.png' %}" class="img-fluid" style="max-height: 70%;">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. i sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn mdb-color darken-2" style="color: #ebecee!important;" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn mdb-color darken-2" style="color: #ebecee!important;">Descargar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sign up button -->
+                    <button class="btn btn-info my-4 btn-block mdb-color darken-2" type="submit">Registrarse</button>
+
+                    <p>¿Ya tienes cuenta? <a href="#" style="color: #a50c11!important;">Iniciar sesión</a> </p>
+
+
+
+
+
+                </form>
+                <!-- Default form register -->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>
+
+{% endblock %}
