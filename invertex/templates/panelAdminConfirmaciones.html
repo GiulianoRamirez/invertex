@@ -1,7 +1,6 @@
 {% extends "index.html" %} {% block title %} Admin Confirmaciones {% endblock %} {% block content %}
 
 
-
 <div class="container mt-5">
 
     <h1 class="text-center">Confirmaciones</h1>
@@ -20,7 +19,7 @@
             <td>Nombre1</td>
             <td>test@test.com</td>
             <td class="text-center">
-                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#basicExampleModal">
+                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#modalDocumento">
                     Ver documento
                 </button>
             </td>
@@ -28,7 +27,7 @@
                 <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;">
                     Confirmar
                 </button>
-                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;">
+                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;" data-toggle="modal" data-target="#modalRechazar">
                     Rechazar
                 </button>
             </td>
@@ -38,7 +37,7 @@
             <td>Nombre2</td>
             <td>test@test.com</td>
             <td class="text-center">
-                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#basicExampleModal">
+                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#modalDocumento">
                     Ver documento
                 </button>
             </td>
@@ -46,7 +45,7 @@
                 <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;">
                     Confirmar
                 </button>
-                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;">
+                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;" data-toggle="modal" data-target="#modalRechazar">
                     Rechazar
                 </button>
             </td>
@@ -56,7 +55,7 @@
             <td>Nombre3</td>
             <td>test@test.com</td>
             <td class="text-center">
-                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#basicExampleModal">
+                <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;" data-toggle="modal" data-target="#modalDocumento">
                     Ver documento
                 </button>
             </td>
@@ -64,7 +63,7 @@
                 <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;">
                     Confirmar
                 </button>
-                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;">
+                <button type="button" class="btn btn-sm" style="background-color: #a50c11!important; color: #ebecee!important;" data-toggle="modal" data-target="#modalRechazar">
                     Rechazar
                 </button>
             </td>
@@ -72,9 +71,9 @@
     </table>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+<!-- Modal documento -->
+<div class="modal fade" id="modalDocumento" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Documento</h5>
@@ -95,12 +94,118 @@
 </div>
 
 
+<!-- Modal rechazar -->
+<div class="modal fade" id="modalRechazar" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel"> Correo de respuesta </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+
+                    <div class="modal-body">
+                        <input type="modal-body" class="form-control" value="test@test.com" id="recipient-name">
+
+                    </div>
+                    <div id="menuBarDiv" class="row-fluid">
+                        <div class="btn-group ">
+                            <div class="btn-group" title="Fonts" style="cursor: pointer;"><a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" title="Fonts"> Fuente <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="javascript:void(0)"> Sans
+                                                                    serif </a></li>
+                                    <li><a tabindex="-1" href="javascript:void(0)"> Serif </a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)"> Wide </a></li>
+                                    <li><a tabindex="-1" href="javascript:void(0)"> Narrow< /a>
+                                                            </li>
+                                                            <li><a tabindex="-1" href="javascript:void(0)">Comic Sans
+                                                                    MS</a></li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Courier
+                                                                    New</a></li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Garamond</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Georgia</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Tahoma</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Trebuchet
+                                                                    MS</a></li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">Verdana</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="btn-group" title="Font Size" style="cursor: pointer;"><a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" title="Font Size">Tamaño fuente<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="javascript:void(0)">10</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">12</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">14</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">16</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="javascript:void(0)">18</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Bold" style="cursor: pointer;"><i
+                                                            class="fa fa-bold"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Italics" style="cursor: pointer;"><i class="fa fa-italic"></i></a><a href="javascript:void(0)" class="btn btn-sm"
+                                title="Underline" style="cursor: pointer;"><i
+                                                            class="fa fa-underline"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Text/Background Color" style="cursor: pointer;"><i class="fa fa-font"></i></a></div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Align Left" style="cursor: pointer;"><i class="fa fa-align-left"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Align Center" style="cursor: pointer;"><i
+                                                            class="fa fa-align-center"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Align Right" style="cursor: pointer;"><i
+                                                            class="fa fa-align-right"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Justify" style="cursor: pointer;"><i
+                                                            class="fa fa-align-justify"></i></a></div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Increase Indent" style="cursor: pointer;"><i class="fa fa-indent"></i></a>
+                            <a href="javascript:void(0)" class="btn btn-sm" title="Decrease Indent" style="cursor: pointer;"><i class="fa fa-outdent"></i></a>
+                            <a href="javascript:void(0)" class="btn btn-sm" title="Block Quote" style="cursor: pointer;"><i class="fa fa-quote-right"></i></a>
+                            <a href="javascript:void(0)" class="btn btn-sm" title="Insert/Remove Numbered List" style="cursor: pointer;"><i class="fa fa-list-ol"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Insert/Remove Bulleted List"
+                                style="cursor: pointer;"><i class="fa fa-list-ul"></i></a></div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Undo" style="cursor: pointer;"><i
+                                                            class="fa fa-undo"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Redo" style="cursor: pointer;"><i
+                                                            class="fa fa-repeat"></i></a></div>
+                        <div class="btn-group"><a href="#InsertLink" role="button" class="btn btn-sm" data-toggle="modal" title="Insert Link"><i class="fa fa-link"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Unlink" style="cursor: pointer;"><i class="fa fa-unlink"></i></a>
+                            <a href="#InsertImage" role="button" class="btn btn-sm" data-toggle="modal" title="Insert Image"><i class="fa fa-picture-o"></i></a>
+                            <a href="#InsertTable" role="button" class="btn btn-sm" data-toggle="modal" title="Insert Table"><i class="fa fa-table"></i></a>
+                        </div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Strike Through" style="cursor: pointer;"><i
+                                                            class="fa fa-strikethrough"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Horizontal Rule" style="cursor: pointer;"><i
+                                                            class="fa fa-minus"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Insert Special Character" style="cursor: pointer;"><i class="fa fa-asterisk"></i></a>
+                        </div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Print" style="cursor: pointer;"><i class="fa fa-print"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Remove Formatting" style="cursor: pointer;"><i
+                                                            class="fa fa-eraser"></i></a><a href="javascript:void(0)" class="btn btn-sm" title="Select All" style="cursor: pointer;"><i class="fa fa-file-text"></i></a><a href="javascript:void(0)" class="btn btn-sm"
+                                title="Source" style="cursor: pointer;"><i class="fa fa-code"></i></a></div>
+                        <div class="btn-group"><a href="javascript:void(0)" class="btn btn-sm" title="Toggle Screen" style="cursor: pointer;"><i class="fa fa-arrows-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                        <textarea type="text" id="message-text" placeholder="Mensaje..." class="form-control md-textarea" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn mdb-color darken-2" style="color: #ebecee!important;" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn" style="background-color: #a50c11!important; color: #ebecee!important;" data-dismiss="modal">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container mt-5">
 
     <h1 class="text-center">Mensaje de confirmación</h1>
 
     <div class="row mt-4">
-
+        <div class="col-md-3"></div>
         <div class="col-md-6">
             <form action="#">
                 <div class="form-group shadow-textarea">
@@ -114,29 +219,13 @@
                 </div>
 
             </form>
-
-
         </div>
-
-        <div class="col-md-6">
-            <form action="#">
-                <div class="form-group shadow-textarea">
-                    <label for="exampleFormControlTextarea6">Mensaje de Rechazo</label>
-                    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="7" placeholder="Mensaje..."></textarea>
-                </div>
-                <div class="text-center mb-4">
-                    <button type="button" class="btn btn-sm mdb-color darken-2" style="color: #ebecee!important;">
-                        Modificar
-                    </button>
-                </div>
-            </form>
-        </div>
+        <div class="col-md-3"></div>
 
     </div>
 
 
 </div>
-
 
 
 
