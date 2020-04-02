@@ -17,4 +17,8 @@ def register(request):
     return render(request, 'register.html',{"edades": adades})
 
 
+def login(request):
+    return render(request, 'login.html')
+
+
 

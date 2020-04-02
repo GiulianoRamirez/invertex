@@ -1,0 +1,69 @@
+{% extends "index.html" %} {% block title %} Login {% endblock %} {% block content %}
+
+
+
+
+<div class="container my-5 py-5 ">
+
+
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+
+                <!-- Default form login -->
+                <form class="text-center" action="#!">
+
+                    <p class="h4 mb-4">Iniciar sesión</p>
+
+                    <!-- Email -->
+                    <input type="email" class="form-control mb-4" placeholder="Correo">
+
+                    <!-- Password -->
+                    <input type="password" class="form-control mb-4" placeholder="Contraseña">
+
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="" style="color: #a50c11!important;">¿haz olvidado tu contraseña?</a>
+                        </div>
+                    </div>
+
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4 mdb-color darken-2" type="submit">Iniciar sesión</button>
+
+                    <!-- Register -->
+                    <p>¿No tienes cuenta?
+                        <a href="" style="color: #a50c11!important;">Registrate</a>
+                    </p>
+
+                    <!-- Social login -->
+                    <p>O inicia sesion con:</p>
+
+                    <a href="#" class="mx-1" style="color: #2e3951!important;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="mx-1" style="color: #2e3951!important;"><i class="fab fa-google"></i></a>
+
+                </form>
+                <!-- Default form login -->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>
+
+{% endblock %}

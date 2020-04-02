@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from invertex.views import index,register, panelAdminConfirmaciones
+from invertex.views import index,register, panelAdminConfirmaciones, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index),
     path('register/', register),
     path('confirmaciones/', panelAdminConfirmaciones),
+    path('login/', login),
 ]
 
