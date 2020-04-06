@@ -9,6 +9,10 @@ from io import BytesIO
 
 from app.models import perfilesDeUsuario
 
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
 
 
 def formularioRegister(request):
@@ -29,7 +33,26 @@ def formularioRegister(request):
 
     documentoBase64 = ""
 
-    #para imagen png
+    SENDGRID_API_KEY='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'
+
+    
+    #envio de correo
+    message = Mail(
+    from_email='informacion@invertex.cl',
+    to_emails=correo,
+    subject='Registro invertex',
+    html_content='Gracias por registrarte en Invertex, su cuenta esta en proceso de validación, le enviaremos un correo una vez su cuenta sea validada')
+
+    try:
+        sg = SendGridAPIClient(SENDGRID_API_KEY)
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except:
+        print("no se envia correo")
+
+    #para imagen png, jpg, jpeg
     try:
         image = Image.open(documento) 
         buffered = BytesIO()
@@ -37,7 +60,7 @@ def formularioRegister(request):
         documentoBase64 = base64.b64encode(buffered.getvalue())
     except:
         print("La imagen no es .png")
-    
+
     if(documentoBase64 != ""):
         insert = perfilesDeUsuario( nombres=nombres,
                                     apellidoPaterno = paterno,
