@@ -12,53 +12,67 @@
         <div class="row d-flex justify-content-center">
 
             <!--Grid column-->
-            <div class="col-md-6">
+            <div class="col-md-8">
 
                 <!-- Default form register -->
-                <form class="text-center" action="#!">
-
+                <form class="text-center" action="/formularioRegister/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <p class="h4 mb-4">Crea tu cuenta en Invertex</p>
 
+                    <input type="text" class="form-control mb-4" placeholder="Nombres" name="nombres">
+
                     <div class="form-row mb-4">
                         <div class="col">
-                            <!-- Nombre -->
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <!-- Apellido paterno -->
+                            <input type="text" class="form-control" placeholder="Apellido paterno" name="paterno">
                         </div>
                         <div class="col">
-                            <!-- Apellido -->
-                            <input type="text" class="form-control" placeholder="Apellido">
+                            <!-- Apellido materno -->
+                            <input type="text" class="form-control" placeholder="Apellido materno" name="materno">
                         </div>
                     </div>
 
                     <div class="form-row mb-4">
-                        <div class="col-8">
+                        <div class="col-6">
                             <!-- Rut -->
-                            <input type="text" class="form-control" placeholder="Rut">
+                            <input type="text" class="form-control" placeholder="Rut" name="rut">
                         </div>
-                        <div class="col-4">
-                            <!-- Edad -->
-                            <select class="browser-default custom-select">
 
-                                <option value="" disabled selected>Edad</option>
-                                {% for edad in edades %}
-                                    <option value="{{ edad }}">{{ edad }}</option>
-                                {% endfor %}
+                        <div class="col-1">
+                            <i class="fas fa-minus pt-2 mt-1"></i>
+                        </div>
 
-                            </select>
+                        <div class="col-5">
+                            <!-- digito verificador -->
+                            <input type="text" class="form-control" placeholder="digitoVerificador" name="digitoVerificador">
                         </div>
                     </div>
 
-                    <!-- E-mail -->
-                    <input type="email" class="form-control mb-4" placeholder="Correo">
+                    <div class="form-row">
+                        <div class="col-7">
+                            <!-- E-mail -->
+                            <input type="email" class="form-control mb-4" placeholder="Correo" name="correo">
+                        </div>
+
+                        <div class="col-5">
+                            <!-- fecha nacimiento -->
+                            <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
+                                <input class="form-control" type="text" readonly name="fechaNacimiento" id="abc" />
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+
+                        </div>
+                    </div>
+
 
                     <div class="form-row mb-4">
                         <div class="col">
                             <!-- Password -->
-                            <input type="password" class="form-control" placeholder="Contraseña">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="contrasena">
                         </div>
                         <div class="col">
                             <!-- Password -->
-                            <input type="password" class="form-control" placeholder="Repetir contraseña">
+                            <input type="password" class="form-control" placeholder="Repetir contraseña" name="repetirContrasena">
                         </div>
                     </div>
 
@@ -73,8 +87,11 @@
                                     <a href="#" class="mx-1" style="color: #2e3951 !important;" role="button" data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-question-circle mt-3"></i></a>
                                 </div>
                                 <div class="col-10">
-                                    <button type="button" class="btn btn-primary btn-sm mdb-color darken-2">Descargar documento
-                                    </button>
+                                    {% load static %}
+                                    <a href="{% static '/documento.png' %}" type="button" class="btn btn-primary btn-sm mdb-color darken-2" download>
+                                        Descargar documento
+                                    </a>
+
                                 </div>
                             </div>
 
@@ -83,7 +100,7 @@
                         </div>
                         <div class="col">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="documento">
                                 <label class="custom-file-label text-left" for="customFileLang">Subir</label>
                             </div>
                         </div>
@@ -136,5 +153,15 @@
 
 
 </div>
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+
+
 
 {% endblock %}
