@@ -8,7 +8,6 @@ from PIL import Image
 from io import BytesIO
 
 from app.models import perfilesDeUsuario
-from pdf2image import convert_from_path, convert_from_bytes
 
 
 
@@ -29,8 +28,6 @@ def formularioRegister(request):
     print(contrasenaHash)
 
     documentoBase64 = ""
-
-    images = convert_from_path(documento)
 
     #para imagen png
     try:
