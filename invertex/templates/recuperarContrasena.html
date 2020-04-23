@@ -1,0 +1,60 @@
+{% extends "index.html" %} {% block title %} RecuperarContraseña {% endblock %} {% block content %}
+
+
+
+
+<div class="container my-5 py-5 ">
+
+
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-6">
+                
+                <form class="text-center" action="/formRecuperarContrasena/" method="POST" enctype="multipart/form-data">
+                    
+
+                    <p class="h4 mb-4">Recuperar contraseña</p>
+
+
+                    <p>
+                    Ingrese el correo de la cuenta, si hay una cuenta asociada al correo ingresado se le enviara un correo con su contraseña
+                    </p>
+
+                    <!-- Email -->
+                    <input type="email" class="form-control mb-4" placeholder="Correo" name="correo">
+
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4 mdb-color darken-2" type="submit">Enviar</button>
+
+                    
+                </form>
+            
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        if ( localStorage.getItem('nombres') != null ){
+                window.location.href = "/main/";
+            }
+        
+        hidden_logeada_o_no()
+    });
+
+</script>
+
+{% endblock %}

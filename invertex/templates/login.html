@@ -6,33 +6,27 @@
 <div class="container my-5 py-5 ">
 
 
-
-
-    <!--Section: Content-->
     <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
-
-        <!--Grid row-->
         <div class="row d-flex justify-content-center">
 
-            <!--Grid column-->
             <div class="col-md-6">
-
-                <!-- Default form login -->
-                <form class="text-center" action="#!">
+                
+                <form class="text-center" action="/formularioLogin/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
 
                     <p class="h4 mb-4">Iniciar sesión</p>
 
                     <!-- Email -->
-                    <input type="email" class="form-control mb-4" placeholder="Correo">
+                    <input type="email" class="form-control mb-4" placeholder="Correo" name="correo">
 
                     <!-- Password -->
-                    <input type="password" class="form-control mb-4" placeholder="Contraseña">
+                    <input type="password" class="form-control mb-4" placeholder="Contraseña" name="contrasena">
 
                     <div class="d-flex justify-content-around">
                         <div>
                             <!-- Forgot password -->
-                            <a href="" style="color: #a50c11!important;">¿haz olvidado tu contraseña?</a>
+                            <a style="color: #a50c11!important;" href="/recuperarContrasena/">¿haz olvidado tu contraseña?</a>
                         </div>
                     </div>
 
@@ -41,14 +35,14 @@
 
                     <!-- Register -->
                     <p>¿No tienes cuenta?
-                        <a href="" style="color: #a50c11!important;">Registrate</a>
+                        <a href="/register/" style="color: #a50c11!important;">Registrate</a>
                     </p>
 
                     <!-- Social login -->
-                    <p>O inicia sesion con:</p>
+                    {% comment %} <p>O inicia sesion con:</p>
 
                     <a href="#" class="mx-1" style="color: #2e3951!important;"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="mx-1" style="color: #2e3951!important;"><i class="fab fa-google"></i></a>
+                    <a href="#" class="mx-1" style="color: #2e3951!important;"><i class="fab fa-google"></i></a> {% endcomment %}
 
                 </form>
                 <!-- Default form login -->
@@ -65,5 +59,18 @@
 
 
 </div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        if ( localStorage.getItem('nombres') != null ){
+                window.location.href = "/main/";
+            }
+        
+        hidden_logeada_o_no()
+    });
+
+</script>
 
 {% endblock %}

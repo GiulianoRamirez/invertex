@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from invertex.views import index,register, panelAdminConfirmaciones, login, pantallaPostRegistro
-from app.views import formularioRegister
+from invertex.views import index,register, panelAdminConfirmaciones, login, pantallaPostRegistro, userMain, recuperarContrasena
+from app.views import formularioRegister, confirmacionRegister, rechazoRegister, cambiarMensajeConfirmacion, verMensajeConfirmacion, formularioLogin, formRecuperarContrasena
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +26,15 @@ urlpatterns = [
     path('pantallaPostRegistro/', pantallaPostRegistro),
     path('confirmaciones/', panelAdminConfirmaciones),
     path('login/', login),
+    path('recuperarContrasena/', recuperarContrasena),
+    path('formRecuperarContrasena/', formRecuperarContrasena),
+    path('formularioLogin/', formularioLogin),
     path('formularioRegister/', formularioRegister),
+    path('confirmacionRegister/', confirmacionRegister),
+    path('rechazarRegister/', rechazoRegister),
+    path('cambiarMensajeConfirmacion/', cambiarMensajeConfirmacion),
+    path('verMensajeConfirmacion/', verMensajeConfirmacion),
+    path('main/', userMain),
+    path('', index),
 ]
 

@@ -19,23 +19,23 @@
                     {% csrf_token %}
                     <p class="h4 mb-4">Crea tu cuenta en Invertex</p>
 
-                    <input type="text" class="form-control mb-4" placeholder="Nombres" name="nombres">
+                    <input type="text" class="form-control mb-4" placeholder="Nombres" name="nombres" required>
 
                     <div class="form-row mb-4">
                         <div class="col">
                             <!-- Apellido paterno -->
-                            <input type="text" class="form-control" placeholder="Apellido paterno" name="paterno">
+                            <input type="text" class="form-control" placeholder="Apellido paterno" name="paterno" required>
                         </div>
                         <div class="col">
                             <!-- Apellido materno -->
-                            <input type="text" class="form-control" placeholder="Apellido materno" name="materno">
+                            <input type="text" class="form-control" placeholder="Apellido materno" name="materno" required>
                         </div>
                     </div>
 
                     <div class="form-row mb-4">
                         <div class="col-6">
                             <!-- Rut -->
-                            <input type="text" class="form-control" placeholder="Rut" name="rut">
+                            <input type="text" class="form-control" placeholder="Rut" name="rut" id="rut" required>
                         </div>
 
                         <div class="col-1">
@@ -44,20 +44,20 @@
 
                         <div class="col-5">
                             <!-- digito verificador -->
-                            <input type="text" class="form-control" placeholder="digitoVerificador" name="digitoVerificador">
+                            <input type="text" id="digitoVerificador" class="form-control" placeholder="digitoVerificador" name="digitoVerificador" size="1" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-7">
                             <!-- E-mail -->
-                            <input type="email" class="form-control mb-4" placeholder="Correo" name="correo">
+                            <input type="email" class="form-control mb-4" placeholder="Correo" name="correo" required>
                         </div>
 
                         <div class="col-5">
                             <!-- fecha nacimiento -->
                             <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
-                                <input class="form-control" type="text" readonly name="fechaNacimiento" id="abc" />
+                                <input class="form-control" type="text" readonly name="fechaNacimiento" id="abc" required />
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
 
@@ -68,11 +68,11 @@
                     <div class="form-row mb-4">
                         <div class="col">
                             <!-- Password -->
-                            <input type="password" class="form-control" placeholder="Contraseña" name="contrasena">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" id="contrasena" required> 
                         </div>
                         <div class="col">
                             <!-- Password -->
-                            <input type="password" class="form-control" placeholder="Repetir contraseña" name="repetirContrasena">
+                            <input type="password" class="form-control" placeholder="Repetir contraseña" name="repetirContrasena" id="repetirContrasena" required>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
                         </div>
                         <div class="col">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="documento">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="documento" required>
                                 <label class="custom-file-label text-left" for="customFileLang">Subir</label>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                     </div>
 
                     <!-- Sign up button -->
-                    <button class="btn btn-info my-4 btn-block mdb-color darken-2" type="submit">Registrarse</button>
+                    <button class="btn btn-info my-4 btn-block mdb-color darken-2" type="submit" id="botonRegistrarse">Registrarse</button>
 
                     <p>¿Ya tienes cuenta? <a href="#" style="color: #a50c11!important;">Iniciar sesión</a> </p>
 
@@ -155,13 +155,11 @@
 </div>
 
 
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 
 {% load static %}
+
 <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
-
-
 
 {% endblock %}
