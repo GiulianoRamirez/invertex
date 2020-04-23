@@ -16,12 +16,20 @@ class perfilesDeUsuario(models.Model):
     createTime = models.DateTimeField(auto_now_add=True)
     updateTime = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self
+
+        
+
 
 
 class mensajesConfirmacion(models.Model):
     mensaje = models.CharField(max_length=1000) 
     createTime = models.DateTimeField(auto_now_add=True)
     updateTime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self
 
 
 

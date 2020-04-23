@@ -13,18 +13,31 @@
 
 
         <h1>
-            Registro exitoso!
+            {{mensaje1}}
         </h1>
-        <h3>(Espera a tu confirmación por correo)</h3>
+        <h3>{{mensaje2}}</h3>
         <div>
             <a class="btn btn-info my-4 mdb-color darken-2" type="submit" href="/login/">Volver al inicio</a>
 
         </div>
 
     </section>
+
+
     <!--Section: Content-->
 
 
+
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (localStorage.getItem('nombres') != null) {
+            window.location.href = "/main/";
+        }
+
+        hidden_logeada_o_no()
+    });
+</script>
 
 {% endblock %}

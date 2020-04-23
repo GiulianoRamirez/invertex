@@ -1,0 +1,117 @@
+{% extends "index.html" %} {% block title %} Invertex {% endblock %} {% block content %}
+
+
+<div class="container my-5 py-5 " id="todo">
+
+
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+
+        <div class="jumbotron text-center">
+
+            <!-- Title -->
+            <h2 class="card-title h2">Felicidades <span id="nombres_jumbotron"></span>! </h2>
+            <!-- Subtitle -->
+            <p class="blue-text my-4 font-weight-bold">Haz iniciado sesion exitosamente</p>
+
+            <!-- Grid row -->
+            <div class="row d-flex justify-content-center">
+
+                <!-- Grid column -->
+                <div class="col-xl-7 pb-2">
+
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias hic itaque
+                        accusantium doloremque laudantium, totam rem aperiam.</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <hr class="my-4">
+
+            <div class="pt-2">
+                <button onclick="button1()" type="button" class="btn btn-blue waves-effect">Clickeame!!!  XDDDD<span class="far fa-gem ml-1"></span></button>
+                <button onclick="button2()" type="button" class="btn btn-outline-primary waves-effect">Clickeame!!!  :DDD <i class="fas fa-download ml-1"></i></button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Section: Content-->
+
+
+
+</div>
+
+{% comment %}
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> {% endcomment %}
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        if ("{{nombres}}" != "") {
+            localStorage.setItem('nombres', "{{ nombres }}")
+            localStorage.setItem('contrasena', "{{ contrasena }}")
+            window.location.href = "/main/";
+        } else {
+            if (localStorage.getItem('nombres') === null) {
+                window.location.href = "/login/";
+            } else {
+                console.log("ACAAA")
+                hidden_logeado()
+            }
+        }
+
+        document.getElementById("nombres_jumbotron").innerHTML = localStorage.getItem('nombres')
+
+
+    });
+
+
+    function hidden_logeado() {
+        document.getElementById("nav_login").hidden = true
+        document.getElementById("nav_register").hidden = true
+        document.getElementById("nav_confirmaciones").hidden = false
+        document.getElementById("nav_cerrar_sesion").hidden = false
+        document.getElementById("nav_inicio").hidden = false
+    }
+
+
+
+    function resolveAfter2Seconds(x) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(x);
+            }, 1000);
+        });
+    }
+
+
+    async function button1() {
+        $('#todo').removeClass("animated rollOut");
+
+        $('#todo').addClass("animated rollOut");
+        var x = await resolveAfter2Seconds(1);
+        $('#todo').removeClass("animated rollOut");
+    }
+
+    async function button2() {
+
+
+        $('#todo').addClass("animated infinite swing");
+
+    }
+</script>
+
+{% endblock %}

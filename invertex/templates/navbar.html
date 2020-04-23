@@ -66,17 +66,21 @@
                 <!-- Left -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="/login">LOGIN</a>
+                        <a class="nav-link waves-effect" href="/login/" id="nav_login">INICIAR SESION</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="/register">REGISTER</a>
+                        <a class="nav-link waves-effect" href="/register/" id="nav_register">REGISTRARSE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="/confirmaciones">CONFIRMACIONES</a>
+                        <a class="nav-link waves-effect" href="/confirmaciones/" id="nav_confirmaciones">CONFIRMACIONES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect" href="#">CERRAR SESIÓN</a>
+                        <a class="nav-link waves-effect" onclick="cerrar_sesion()" href="#" id="nav_cerrar_sesion">CERRAR SESIÓN</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="/main" id="nav_inicio">INICIO</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -84,6 +88,35 @@
         </div>
     </nav>
     <!-- Navbar -->
+
+    <script type="text/javascript">
+        function cerrar_sesion() {
+            localStorage.removeItem('nombres');
+            localStorage.removeItem('contrasena');
+            window.location.href = "/login/";
+        }
+
+        function hidden_logeada_o_no() {
+            console.log("se ejecuta funcion oculta de navbar")
+            if (localStorage.getItem('nombres') === null || localStorage.getItem('contrasena') === null) {
+
+                console.log("no logeado")
+                document.getElementById("nav_login").hidden = false
+                document.getElementById("nav_register").hidden = false
+                document.getElementById("nav_confirmaciones").hidden = true
+                document.getElementById("nav_cerrar_sesion").hidden = true
+                document.getElementById("nav_inicio").hidden = true
+
+            } else {
+                console.log("logeado")
+                document.getElementById("nav_login").hidden = true
+                document.getElementById("nav_register").hidden = true
+                document.getElementById("nav_confirmaciones").hidden = false
+                document.getElementById("nav_cerrar_sesion").hidden = false
+                document.getElementById("nav_inicio").hidden = false
+            }
+        }
+    </script>
 
 </header>
 <!-- Navigation -->
